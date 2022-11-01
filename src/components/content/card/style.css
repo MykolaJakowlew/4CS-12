@@ -12,6 +12,11 @@
   height: 200px;
   background-position: center;
   background-size: cover;
+  transition: 0.225s;
+}
+
+.card > .card-image:hover {
+  opacity: 0.8;
 }
 
 .card > .card-text {
@@ -31,4 +36,8 @@
 
 .card .card-meta {
   font-size: 14px;
+}
+
+.card .card-tag {
+  cursor: pointer;
 }
