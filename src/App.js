@@ -12,7 +12,9 @@ function App () {
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path='/' element={<Content />} />
+          <Route path='/' element={<Content />} >
+            <Route path=":id" element={<Content />} />
+          </Route>
           <Route path='/about' element={< About />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>

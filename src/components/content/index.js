@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, } from "react";
+import { useParams } from 'react-router-dom';
 import './style.css';
 import Card from './card';
 import CardContent from "./card-content";
@@ -7,10 +8,15 @@ import mockData from './mock/data.json';
 function Content () {
   const cards = mockData;
 
+  const { id: cardId } = useParams();
+
+
   const [selectedTag, setSelectedTag] = useState();
   console.log(`selectedTag:${selectedTag}`);
 
-  const [selectedCard, setSelectedCard] = useState();
+  const [selectedCard, setSelectedCard] = useState(
+    cards.find(card => card.id === cardId)
+  );
   console.log(`card:`, selectedCard);
 
   // let div = <div></div>;
