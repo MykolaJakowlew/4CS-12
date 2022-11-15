@@ -16,6 +16,7 @@
   color: white;
   width: 100px;
   display: none;
+  z-index: 10;
 }
 .menu-sub > div {
   width: 100%;
