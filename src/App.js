@@ -1,27 +1,23 @@
-import React, { useState } from 'react';
+
+import React from "react";
+import LoginPage from "./components/login";
+import MainPage from "./components/main";
 import './App.css';
-import WeatherWidget from './components/weather-widget';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+// https://dummyjson.com/docs/auth
 
 function App () {
-  const [selectedCity, setSelectedCity] = useState();
-
-  const selectCity = (event) => {
-    const value = event.target.value;
-    setSelectedCity(value);
-  };
-
-  console.log(`selectedCity:${selectedCity}`);
   return (
-    <div className="App">
-      <div className='input-wrapper'>
-        <input
-          onBlur={selectCity}
-          type="text" class="input-search" id="input-search" />
-        <label class="search" for="input-search">
-        </label>
+    <BrowserRouter>
+      <div className='App'>
+        <Routes>
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/' element={<MainPage />} />
+        </Routes>
+
       </div>
-      <WeatherWidget city={selectedCity} />
-    </div>
+    </BrowserRouter>
   );
 }
 
